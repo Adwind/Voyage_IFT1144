@@ -1,0 +1,35 @@
+body {
+	background: #00FF99 url('../images/punta-cana.jpg') fixed center;
+	background-size: cover;
+	font-family: Arial, Helvetica, sans-serif;
+		}
+#conteneur {
+	width: 950px;
+	margin-right: auto;
+	margin-left: auto;
+	background-color: #FFFFFF;
+	padding: 5px;
+}
+.colG {width:30%}
+.colD {width:70%}
+main {display:block}
+footer {
+	height: 90px;
+	background-color: #0AA;
+	text-align:center;
+}
+		.gauche {float:left; margin-left:100px;}
+		.droite {float:right; margin-right:100px;}
+	#table table {
+	border: 1px solid #008000;
+	width: 20%;
+	border-collapse: collapse;
+}
+		form {
+			border: 2px dotted #FF0000;
+		}
+		#table td {
+	border: 1px solid #000080;
+	text-align: right;
+}
+.styleDiv {color:red;}

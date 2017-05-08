@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="fr-ca">
+<head>
+<meta charset="utf-8">
+<title>Titre</title>
+<script src="js/mesFonctions.js"></script>
+<link href="css/styles.css" rel="stylesheet" type="text/css">
+
+</head>
+
+      <!-- #4.  Ajouter l'appel à la fonction loader() pour l'exécuter aussitôt -->
+	  <!--      la page téléchargée(événement onload) -->
+<body onload ="loader()">   			
+
+	<div id="conteneur">
+		
+		<main id="principal">   
+
+   
+      <!--  #7.  Ici un titre 1 avec texte "VOYAGES Intrasol" et l'attribut id="premier" sera inséré par loader() -->    
+
+
+            <!-- ---------------------------------------------------------------------->  
+      <!--  #5.  Le contenu de ce titre 2 sera remplacé par un autre texte par la fonction loader() -->
+				
+            <h2 id="titreVar">Nos offres courantes</h2>
+            <!-- ---------------------------------------------------------------------->  
+			
+            <!-- ---------------------------------------------------------------------->  			
+      <!--  #2.  Insérez ici dans la balise <script> des instructions pour obtenir le caractère à répéter ainsi 
+			     que le nombre de fois à boucler afin de les utiliser dans la fonction bordure() modifiée -->
+            <!-- modifier la fonction bordure() ici et dans mesFonctions.js afin de lui passer 2 arguments -->
+            
+            <script>
+				
+				//demande du character pour la bordure et le nombre de fois qu'il apparait
+				var car = prompt("Caract&eacute;re voulue pour la bordure:", "~");
+				var nb = +prompt("Nombre de fois que le charact&eacute;re apparait:", "60");
+				
+				bordure(car, nb);
+			</script>    
+
+			
+            <!-- ----------------------------------------------------------------------> 
+			
+     <!--   #3. et #6. La fonction loader() remplacera le contenu de cette division avec id="table" par 
+					une table de voyages créée par la fonction dessinerTable()-->
+            
+            <div id="table" class="styleDiv" title="table des choix">
+                <p>Table des choix viendra ici</p>
+            </div>
+			<!--  ----------------------------------------------------------------------->
+			
+            <form id="voyages" action="http://www-desi.iro.umontreal.ca/~stewartk/cgi-bin/traite_form.cgi" method="post" name="voyages">
+                
+                <p><img id="imgChoix" src="images/vacances.jpg">   
+
+                <!-- ---------------------------------------------------------------------->
+     <!--   #8   Ajoutez le gestionnaire "onclick" à ce champ.  Cliquer dans ce champ doit appeler 
+				  une fonction qui affichera le message "Entrez nom de famille en premier." -->
+                <p>Nom:
+                <input id="nomPren" onclick="alert('Entrez nom de famille en premier')" name="nomPren"  size="30" type="text" >
+                </p>
+
+				<!--  ------------------------------------------------------------------------------- -->
+     <!--   #9.1   Ajoutez à la définition de chacun des deux boutons radio le gestionnaire et son appel à
+					la fonction affichePrix() qui va exécuter dès qu'un usager coche un bouton radio --
+					"change" (onchange) l'état du bouton -->
+					
+                <h3>Les Forfaits :&nbsp; </h3>			
+				<p>VARADERO, CUBA	<input type="radio" name="forfaits" id="forfait1" value="1" onchange="affichePrix()"/> &nbsp;
+
+					JAMAÏQUE   <input type="radio" name="forfaits" id="forfait2" value="2"  onchange="affichePrix()"/>  &nbsp;  &nbsp;  &nbsp;    
+					
+					Prix forfait: <input name="prixForfait" id="prixForfait" readonly size="10" type="text"  ></p>
+				<!--  ------------------------------------------------------------------------------- -->			    
+
+                <h3>Les Xtra :&nbsp; </h3>
+                <p><strong>Prix Xtra: 100.00</strong></p>
+				
+                <p>Golf  <input id="xtra1" name="xtra1" type="checkbox" value="Golf avec pro">  &nbsp;  &nbsp;  &nbsp;
+				
+                Bain scandinave 		<input id="xtra2" name="xtra2" type="checkbox" value="Bain scandinave">  &nbsp;  &nbsp;  &nbsp;
+				
+                Leçons scuba		<input id="xtra3" name="xtra3" type="checkbox" value="Leçons scuba"></p>
+				<!--  ------------------------------------------------------------------------------- -->	
+				
+                <p>Taxes: <input name="taxe" id="taxe" readonly size="10" type="text"> (10%)</p>
+                 <!-- note - readonly - usager ne peut pas effacer--> 
+
+                <p>Total à payer: <input name="payer" id="payer" readonly size="10" type="text"></p>
+                
+               <input name="Submit1" type="submit" value="Envoyer">  
+                    
+                <input name="Reset1" type="reset" value="Effacer">  
+				
+				<!--  ------------------------------------------------------------------------------- -->	
+     <!--   #10.1  Ajoutez au bouton type "button" avec texte (value) "Calculer" 
+				un appel à la fonction calculer() si bouton cliqué ------- -->
+                    
+                <input name="Button1"  type="button" value="Calculer" onclick="calculer()" >
+				
+                <!-- ---------------------------------------------------------------------->
+		  </form>
+        </main>
+	
+		<footer>
+	
+			<p class="centrer">Alexandra Potvin Code Permanent : 20018697</p>
+			
+		</footer>
+   </div> <!--Fin conteneur-->
+
+</body>
+
+</html>
